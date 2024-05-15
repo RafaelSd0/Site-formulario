@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+
+  <link href="./output.css" rel="stylesheet">
+</head>
+<body class="bg-slate-200">
+    <h1 class="text-4xl text-center font-bold m-5">Formulario</h1>
+    <form id = "form" class=" bg-white flex flex-col text-center p-4 text-lg sm:mx-20 md:mx-40 lg:mx:60 xl:mx-80 2xl:mx-100 pb-10 space-y-8 rounded">
+        <div>
+            <p class="block font-sans font-semibold" >
+                Nome completo
+            </p>
+            <input type="text" class="text-sm border" placeholder="Seu nome" name="name" id="name" oninput="nameValidate()" autocomplete="given-name">
+            <br>
+            <span class="hidden text-sm text-red-600" id="err"> O nome deve ter no minimo 3 caracteres</span>
+        </div>
+
+        <div >
+            <p class="block font-sans font-semibold " >
+                Email
+            </p>
+            <input type="email" class="text-sm border" placeholder="exemplo@email.com " name="email" id="email" oninput="emailValidate()" autocomplete="on">
+            <br>
+            <span class="hidden text-sm text-red-600" id="err"> Insira um email valido</span>
+        </div>
+        
+        <div >
+            <p class="block font-sans font-semibold">
+                Telefone
+            </p>
+            <input type="text" class="text-sm border  " name="telephone" placeholder="seu número de telefone" id="telephone" oninput="telephoneValidate()" autocomplete="tel">
+            <br>
+            <span class="hidden text-sm text-red-600" id="err"> Insira um telefone valido</span>
+        </div>
+
+        <div>
+            <span class="block font-sans font-semibold">
+                Você é estrangeiro?
+            </span> 
+            <input type="radio" name="opcao" onchange="if(this.checked) pais()" id="sim"><label for="sim">Sim</label>
+            <br>
+            <input type="radio" name="opcao" onchange="if(this.checked) pais()" id="nao" checked ><label for="nao">Não</label>
+            
+            <div id="estrangeiro">
+                
+                <span class="block font-sans font-semibold" id="pergunta">
+                    
+                </span>
+                
+            </div>
+        </div>
+
+        <div>
+            <span class="block font-sans font-semibold">
+                Genero
+            </span>
+            <input type="radio" name="genero" id="masculino" checked ><label for="masculino">Masculino</label>
+            <br>
+            <input type="radio" name="genero" id="feminino" ><label for="feminino">Feminino</label>
+            <br>
+            <input type="radio" name="genero" id="naodizer"><label for="naodizer">Prefiro não dizer</label>
+            <br>
+            <input type="radio" name="genero" id="outro"><label for="outro">Outro</label>
+        </div>
+        
+        <div>
+            <span class="block font-sans font-semibold">
+                Estado civil
+            </span>
+            <input type="radio" name="estado" id="solteiro" checked><label for="solteiro">Solteiro</label>
+            <br>
+            <input type="radio" name="estado" id="casado"><label for="casado">Casado</label>
+            <br>
+            <input type="radio" name="estado" id="divorciado"><label for="divorciado">Divorciado</label>
+            <br>
+            <input type="radio" name="estado" id="viuvo"><label for="viuvo">Viúvo</label>
+        </div>
+
+        <div>
+            <button type="submit" onclick="verificacao()">Enviar</button>
+        </div>
+      
+        
+        
+    </form>
+
+    <footer class=" mb-5 p-5 border-t-2 border-black border-opacity-30">
+        <p class="text-center">&COPY; Rafael Silva De Oliveira</p>
+    </footer>
+
+</body>
+
+<script src="script1.js"></script>
+</html>
