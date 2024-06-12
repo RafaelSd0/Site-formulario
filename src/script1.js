@@ -96,23 +96,26 @@ function simOuNao(){
     if(sim.checked){
         if(input.value == ""){
             window.alert('pais não selecionado')
+            return true
+        }else{
+            return false
         }
-        return true
     }else if(nao.checked){
         return false
     }
 }
+
 //Coleta de dados java script
 
 
 //verivicar se esta tudo preenchido
 function verificacao(){
-    if(tel.value == '' || nam.value == '' || ema.value == ''){
+    if(tel.value == '' || nam.value == '' || ema.value == '' || simOuNao()){
         window.alert('erro os dados estão vazios')
-        simOuNao()
-    }else if(telephoneValidate() || nameValidate() || emailValidate()){
+        
+    }else if(telephoneValidate() || nameValidate() || emailValidate() || simOuNao()){
         window.alert('erro os dados não preenchidos corretamente')
-        simOuNao()
+       
     }else{
         form.addEventListener('submit', evento => {
             evento.preventDefault()
